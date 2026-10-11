@@ -71,6 +71,8 @@ async def test_diagnostics_redaction(
     init_integration: MockConfigEntry,
 ) -> None:
     """Test that sensitive fields are properly redacted."""
+    coordinator = init_integration.runtime_data
+    coordinator.async_set_updated_data({**coordinator.data, "D01S0D": "SN-SHOULD-REDACT"})
     result = await async_get_config_entry_diagnostics(hass, init_integration)
 
     # Verify host is redacted
@@ -86,6 +88,8 @@ async def test_diagnostics_redaction(
     # Verify device_id in status is redacted (if present)
     if "DeviceId" in result["device_status"]:
         assert result["device_status"]["DeviceId"] == REDACTED
+
+    assert result["device_status"]["D01S0D"] == REDACTED
 
     # Verify entity unique_ids and IDs are redacted (if present)
     for entity in result["entities"]["details"]:

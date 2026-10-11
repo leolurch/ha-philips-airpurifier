@@ -5,12 +5,8 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Any
 
-from homeassistant.components.humidifier import HumidifierEntity
-from homeassistant.components.humidifier.const import (
-    HumidifierAction,
-    HumidifierDeviceClass,
-    HumidifierEntityFeature,
-)
+from homeassistant.components.humidifier import HumidifierDeviceClass, HumidifierEntity
+from homeassistant.components.humidifier.const import HumidifierAction, HumidifierEntityFeature
 
 from .const import HUMIDIFIER_TYPES, FanAttributes, FanFunction
 from .entity import PhilipsAirPurifierEntity
