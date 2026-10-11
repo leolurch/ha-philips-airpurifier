@@ -21,6 +21,8 @@ TO_REDACT = {
     "DeviceId",
     "device_serial",
     "serial_number",
+    # Gen 3 status sends the serial number under this wire key, not "serial_number".
+    "D01S0D",
     "mac",
     "ip_address",
     "host",

@@ -7,6 +7,11 @@ and this project adheres to [Calendar Versioning](https://calver.org/) (`YYYY.MM
 
 ## [Unreleased]
 
+### Fixed
+
+- Import `ATTR_BRIGHTNESS`, `ATTR_EFFECT`, `EFFECT_OFF`, `FanEntityFeature`, and `HumidifierDeviceClass` from the Home Assistant domain packages so the integration loads on 2026.9.x and 2026.10.x.
+- Redact the Gen 3 serial-number status key (`D01S0D`) in diagnostics downloads.
+
 ## [2026.10.0] - 2026-10-08
 
 ### Added
